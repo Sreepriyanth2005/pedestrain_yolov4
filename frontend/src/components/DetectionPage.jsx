@@ -37,7 +37,7 @@ function DetectionPage() {
       setError(null); // Reset error state
 
       // Send image to Flask backend
-      const response = await axios.post('http://127.0.0.1:5000/detect', formData, {
+      const response = await axios.post('https://pedestrain-yolov4.onrender.com/detect', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
@@ -46,7 +46,7 @@ function DetectionPage() {
       setPedestrianCount(count);
 
       // Set the output image path
-      setOutputImage('http://127.0.0.1:5000/output_image');
+      setOutputImage('https://pedestrain-yolov4.onrender.com/output_image');
 
       // Add the pedestrian count to the history
       setPedestrianHistory(prevHistory => [
